@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Archivo Black", sans-serif;
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --bg-body: #fbfbfb;
+  --max-content-width: 80rem;
+
+  --nav-height: 2.75rem;
+  --nav-height-top: 2.6875rem;
+
+  --highlight-color: #fd5006;
+
+  --dashed-underline-width: 10px;
+  --dashed-underline-width-n: -10px;
+
+  --intro-container-width-sm: 35cqw;
+  --intro-container-width: 32cqw;
+
+  @keyframes checkered-row-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes dashed-underline-marquee {
+    0% {
+      background-position: 0 100%;
+    }
+    100% {
+      background-position: var(--dashed-underline-width) 100%;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative inline-flex items-center font-mono leading-(--nav-height) after:pl-2 after:text-(--highlight-color) after:content-['/'] last:after:hidden hover:text-(--highlight-color);
+  }
+  .nav-link:hover > svg {
+    @apply fill-(--highlight-color);
+  }
+  .text-link,
+  .text-link-external {
+    @apply relative inline-flex w-fit items-center gap-0.5 font-mono font-semibold after:inline-block after:h-4 after:w-4 after:transition-transform after:duration-150 hover:animate-[dashed-underline-marquee_500ms_linear_infinite] hover:after:translate-x-1;
+
+    background-image: linear-gradient(to right, #000 50%, transparent 50%);
+    background-size: var(--dashed-underline-width) 1.5px;
+    background-repeat: repeat-x, repeat-y;
+    background-position: 0 100%;
+  }
+  .text-link::after {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(70.5% 0.213 47.604)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>');
+  }
+  .text-link-external::after {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(70.5% 0.213 47.604)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>');
+  }
+  .paragraph-container {
+    @apply flex w-full flex-col gap-4 overflow-hidden border-t border-dashed border-black/30 p-4 md:p-6 xl:p-8;
+  }
+  .paragraph-title {
+    @apply max-w-xl text-2xl font-bold md:text-3xl;
+  }
+  .paragraph-text {
+    @apply max-w-xl text-base md:text-lg;
+  }
+  .section-no {
+    @apply flex items-start font-mono text-sm before:relative before:top-1.5 before:mr-1.5 before:inline-block before:h-2 before:w-2 before:bg-(--highlight-color) xl:text-base before:xl:top-1.75 xl:before:mr-2 xl:before:h-2.5 xl:before:w-2.5;
+  }
+}
+
+@layer utilities {
+  .bg-striped {
+    --stripe-color: rgba(0, 0, 0, 0.5);
+
+    background: linear-gradient(
+      45deg,
+      transparent 25%,
+      var(--stripe-color) 25%,
+      var(--stripe-color) 50%,
+      transparent 50%,
+      transparent 75%,
+      var(--stripe-color) 75%,
+      var(--stripe-color) 100%
+    );
+    background-size: 4px 4px;
+  }
+  .bg-striped-reverse {
+    --stripe-color: rgba(0, 0, 0, 0.5);
+
+    background: linear-gradient(
+      -45deg,
+      transparent 25%,
+      var(--stripe-color) 25%,
+      var(--stripe-color) 50%,
+      transparent 50%,
+      transparent 75%,
+      var(--stripe-color) 75%,
+      var(--stripe-color) 100%
+    );
+    background-size: 4px 4px;
+  }
+  .bg-dot {
+    --dot-color: rgba(0, 0, 0, 0.25);
+
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 12px 12px;
+
+    @apply relative after:absolute after:h-full after:w-full after:bg-[rgba(0,0,0,0.03)];
+  }
+  .bg-grid {
+    --grid-color: rgba(0, 0, 0, 0.25);
+
+    background-image:
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+
+    @apply relative after:absolute after:h-full after:w-full after:bg-[rgba(0,0,0,0.03)];
+  }
+  .dashed-guides-v {
+    @apply relative before:absolute before:-top-3 before:-left-px before:z-0 before:h-[calc(100%+1.5rem)] before:w-[calc(100%+2px)] before:border-x before:border-dashed before:border-black/30 lg:before:-top-6 lg:before:h-[calc(100%+3rem)];
+  }
+  .dashed-guides-h {
+    @apply relative after:absolute after:-top-px after:-left-3 after:z-0 after:h-[calc(100%+2px)] after:w-[calc(100%+1.5rem)] after:border-y after:border-dashed after:border-black/30 lg:after:-left-6 lg:after:w-[calc(100%+3rem)];
+  }
+  .decoration-highlight {
+    @apply relative z-0;
+  }
+  .decoration-highlight::after {
+    background-image: radial-gradient(
+      var(--highlight-color) 1px,
+      transparent 1px
+    );
+    background-size: 2px 2px;
+
+    @apply absolute top-[65%] left-0 -z-10 h-[26%] w-[102%] content-[""];
+  }
+  .text-highlight {
+    @apply text-(--highlight-color);
+  }
+  .bg-highlight {
+    @apply bg-(--highlight-color);
+  }
+}
