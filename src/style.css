@@ -39,12 +39,6 @@
   }
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 @layer components {
   .nav-link {
     @apply relative inline-flex items-center font-mono leading-(--nav-height) after:pl-2 after:text-(--highlight-color) after:content-['/'] last:after:hidden hover:text-(--highlight-color);
