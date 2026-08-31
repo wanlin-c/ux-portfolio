@@ -22,7 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
       <!-- Header -->
-      <div class="overflow-hidden">
+      <div class="relative z-10 overflow-hidden">
         <h1 class="scroll-lines font-display tracking-[-0.03em] mx-4 mt-3 mb-5 text-6xl sm:text-7xl lg:mx-6 lg:mt-5 lg:mb-6 max-xl:max-w-5xl xl:text-[5.25rem]">
           I <span class="decoration-highlight">design</span> interfaces and write the <span class="decoration-highlight">code</span> that brings them to live.
         </h1>
@@ -36,7 +36,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
        <!-- Intro -->
-      <div class="scroll-fade-up flex flex-col w-full pt-4 pb-5 sm:flex-row">
+      <div class="scroll-fade-up relative z-10 flex flex-col w-full pt-4 pb-5 sm:flex-row">
         <div class="w-full max-w-45 px-4 border-dashed border-black/30 sm:px-6 sm:max-w-(--intro-container-width-sm) sm:border-r xl:max-w-(--intro-container-width)">
             <span class="scroll-elem section-no mb-4">
               001—About.
