@@ -22,6 +22,7 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "top 90%",
         toggleActions: "play reset play none",
+        invalidateOnRefresh: true,
       },
     });
   });
@@ -42,6 +43,7 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "top 90%",
         toggleActions: "play none none reverse",
+        invalidateOnRefresh: true,
       },
     });
   });
@@ -62,6 +64,7 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "bottom 110%",
         toggleActions: "play none none reverse",
+        invalidateOnRefresh: true,
       },
     });
   });
@@ -81,6 +84,7 @@ const scrollAnimation = () => {
         trigger: element,
         start: "top 90%",
         toggleActions: "play none none reverse",
+        invalidateOnRefresh: true,
       },
     });
   });
