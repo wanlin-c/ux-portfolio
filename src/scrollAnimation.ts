@@ -12,7 +12,7 @@ const scrollAnimation = () => {
     const parentContainer = element.parentElement;
     const split = SplitText.create(element, { type: "lines" });
 
-    gsap.from(split.lines, {
+    const t = gsap.from(split.lines, {
       opacity: 0,
       yPercent: 100,
       duration: 0.8,
@@ -22,9 +22,12 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "top 90%",
         toggleActions: "play reset play none",
-        invalidateOnRefresh: true,
       },
     });
+
+    window.onresize = () => {
+      t.invalidate();
+    };
   });
 
   const scrollWords = gsap.utils.toArray(".scroll-words");
@@ -33,7 +36,7 @@ const scrollAnimation = () => {
     const parentContainer = element.parentElement;
     const split = SplitText.create(element, { type: "words" });
 
-    gsap.from(split.words, {
+    const t = gsap.from(split.words, {
       opacity: 0,
       yPercent: 100,
       duration: 0.8,
@@ -43,9 +46,12 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "top 90%",
         toggleActions: "play none none reverse",
-        invalidateOnRefresh: true,
       },
     });
+
+    window.onresize = () => {
+      t.invalidate();
+    };
   });
 
   const scrollChars = gsap.utils.toArray(".scroll-chars");
@@ -54,7 +60,7 @@ const scrollAnimation = () => {
     const parentContainer = element.parentElement;
     const split = SplitText.create(element, { type: "chars" });
 
-    gsap.from(split.chars, {
+    const t = gsap.from(split.chars, {
       opacity: 0,
       yPercent: 100,
       duration: 0.8,
@@ -64,9 +70,12 @@ const scrollAnimation = () => {
         trigger: parentContainer,
         start: "bottom 110%",
         toggleActions: "play none none reverse",
-        invalidateOnRefresh: true,
       },
     });
+
+    window.onresize = () => {
+      t.invalidate();
+    };
   });
 
   const scrollFadeUp = gsap.utils.toArray(".scroll-fade-up");
@@ -74,7 +83,7 @@ const scrollAnimation = () => {
   scrollFadeUp.forEach((element: any) => {
     // const parentContainer = element.parentElement;
 
-    gsap.from(element.querySelectorAll(".scroll-elem"), {
+    const t = gsap.from(element.querySelectorAll(".scroll-elem"), {
       opacity: 0,
       yPercent: 100,
       duration: 0.8,
@@ -84,9 +93,12 @@ const scrollAnimation = () => {
         trigger: element,
         start: "top 90%",
         toggleActions: "play none none reverse",
-        invalidateOnRefresh: true,
       },
     });
+
+    window.onresize = () => {
+      t.invalidate();
+    };
   });
 };
 
