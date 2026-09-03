@@ -23,8 +23,8 @@ export const homeCard = (cards: NodeListOf<HTMLDivElement>) => {
     card.innerHTML = /*html*/ `
       <div class="scroll-fade-up flex flex-col w-full gap-1 justify-center p-4 md:p-6 xl:p-8 relative z-10">
         <h3 class="scroll-words text-xl font-bold leading-[1.2] sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl">${title}</h3>
-        <p class="scroll-words font-mono text-sm md:text-base lg:text-sm xl:text-base">${role}</p>
-        <p class="scroll-elem text-(--lighter-text) mt-2.5 text-sm md:text-base lg:text-sm xl:text-base">${description}</p>
+        <p class="scroll-words font-mono text-sm md:text-base lg:text-sm xl:text-base" role="group">${role}</p>
+        <p class="scroll-elem text-(--lighter-text) mt-2.5 text-sm md:text-base lg:text-sm xl:text-base" role="group">${description}</p>
         ${
           tags.length
             ? /*html*/ `

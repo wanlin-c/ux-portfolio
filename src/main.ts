@@ -58,7 +58,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
             </span>
         </div>
         <div class="flex flex-col w-full max-w-lg gap-4 px-4 sm:px-6 xl:max-w-xl">
-          <p class="scroll-lines font-mono font-semibold text-lg xl:text-xl">
+          <p class="scroll-lines font-mono font-semibold text-lg xl:text-xl" role="group">
             Hi, I’m Wanlin. I’m a UI designer and frontend engineer with over 8 years of experience — I design the interface, then I build it.
           </p>
           <p class="scroll-elem text-(--lighter-text) xl:text-lg">
