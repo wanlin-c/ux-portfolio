@@ -275,7 +275,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
 
       <div class="scroll-fade-up relative z-10 flex flex-col w-full p-4 md:p-6 xl:p-8">
         <span class="scroll-elem section-no">
-          005—Contact.
+          004—Contact.
         </span>
 
         <div class="overflow-hidden">
