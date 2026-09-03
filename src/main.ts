@@ -7,7 +7,6 @@ import { dividerStriped } from "./divider";
 import { statBlock } from "./stat.ts";
 import { marquee } from "./marquee.ts";
 import { capabilityColumn } from "./capability.ts";
-import { indexRow } from "./indexRow.ts";
 import { localClock } from "./clock.ts";
 import scrollAnimation from "./scrollAnimation.ts";
 
@@ -73,7 +72,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
 
       <!-- Organisations ticker -->
       <div class="relative z-10 flex flex-col w-full pt-1.5 pb-2">
-        <span class="px-4 pt-3 font-mono text-xs text-(--lighter-text) md:text-sm sm:px-6">
+        <span class="px-4 pt-3 -mb-1 font-mono text-xs text-(--lighter-text) md:text-sm sm:px-6">
           Design &amp; frontend work shipped for:
         </span>
         <div
@@ -263,93 +262,6 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
     </div>
   </section>
 
-  <!-- Experience section -->
-  <section class="relative z-0 w-[calc(100%+1.5rem)] p-3 -mx-3 -mt-1 my-1 dashed-guides-v dashed-guides-h max-lg:before:hidden max-lg:after:hidden lg:w-full lg:mx-0 lg:mb-4.5 lg:-mt-4.25">
-    <div class="flex flex-col w-full border dashed-guides-v dashed-guides-h">
-
-      <!-- stripe divider -->
-      <div class="divider-striped divider-striped-inner"></div>
-
-      <!-- dot divider -->
-      <div class="h-6.5 bg-dot border-b border-default" aria-hidden="true">
-      </div>
-
-      <!-- Section header -->
-      <div class="scroll-fade-up relative z-10 grid flex-col w-full sm:grid-cols-4">
-        <div class="w-full px-4 pt-4 border-default col-span-4 sm:pb-4 sm:px-6 sm:col-span-1 sm:border-r">
-          <span class="scroll-elem section-no">
-            004—Experience.
-          </span>
-        </div>
-        <div class="flex flex-col w-full max-w-lg gap-2 px-4 pt-1 pb-4 col-span-4 sm:pt-4 sm:px-6 sm:col-span-3 xl:max-w-xl">
-          <div class="overflow-hidden">
-            <h2 class="scroll-chars font-display tracking-[-0.03em] text-5xl sm:text-6xl xl:text-7xl">
-              Track record
-            </h2>
-          </div>
-          <p class="scroll-elem text-(--lighter-text) xl:text-lg">
-            A media startup in Singapore, then enterprise and government platforms at NCS — designing and building product end to end throughout.
-          </p>
-        </div>
-      </div>
-
-      <!-- grid divider -->
-      <div class="h-12 bg-grid border-b border-default" aria-hidden="true">
-      </div>
-
-      <!-- Experience index -->
-      <div class="scroll-fade-up relative z-10 flex flex-col w-full">
-        <div
-          class="experience-row"
-          data-period="2018—2025"
-          data-name="NCS"
-          data-role="UI/UX Designer & Frontend Engineer"
-          data-note="Design systems and production frontend for government and enterprise platforms">
-        </div>
-        <div
-          class="experience-row"
-          data-period="2016—2018"
-          data-name="Tech in Asia"
-          data-role="UI/UX Designer"
-          data-note="Sole designer scaling a news site into a media, jobs and startup-database ecosystem across web, iOS and Android">
-        </div>
-      </div>
-
-      <!-- Credentials -->
-      <div class="scroll-fade-up relative z-10 flex flex-col w-full border-t border-default">
-        <span class="scroll-elem bg-black/3 px-4 py-1.5 font-mono font-semibold text-xs sm:px-6 md:text-sm">
-          Credentials:
-        </span>
-        <div
-          class="credential-row"
-          data-period="Certification"
-          data-name="Nielsen Norman Group"
-          data-role="Certificate in User Experience"
-          data-note="NN/g — the industry benchmark for UX practice">
-        </div>
-        <div
-          class="credential-row"
-          data-period="Certification"
-          data-name="Human Factors International"
-          data-role="Certified Usability Analyst"
-          data-note="HFI — usability testing and human-centred design methodology">
-        </div>
-        <div
-          class="credential-row"
-          data-period="Education"
-          data-name="Nanyang Polytechnic"
-          data-role="Diploma in Digital Media Design"
-          data-note="The same institution whose website I later rebuilt">
-        </div>
-      </div>
-
-      <!-- dot divider -->
-      <div class="h-6.5 bg-dot border-t border-default" aria-hidden="true">
-      </div>
-
-    </div>
-  </section>
-
   <!-- Contact section -->
   <section id="contact" class="relative z-0 w-[calc(100%+1.5rem)] p-3 -mx-3 -mt-1 my-1 scroll-mt-(--nav-height) dashed-guides-v dashed-guides-h max-lg:before:hidden max-lg:after:hidden lg:w-full lg:mx-0 lg:mb-4.5 lg:-mt-4.25">
     <div class="flex flex-col w-full border dashed-guides-v dashed-guides-h">
@@ -420,8 +332,6 @@ checkeredRow(document.querySelectorAll(".checkered-row"));
 statBlock(document.querySelectorAll(".stat-block"));
 marquee(document.querySelectorAll(".text-marquee"));
 capabilityColumn(document.querySelectorAll(".capability-column"));
-indexRow(document.querySelectorAll(".experience-row"));
-indexRow(document.querySelectorAll(".credential-row"));
 dividerStriped(document.querySelectorAll(".divider-striped"));
 localClock(document.querySelector("#localClock")!);
 scrollAnimation();
