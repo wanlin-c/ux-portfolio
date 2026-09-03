@@ -13,15 +13,15 @@ export const indexRow = (rows: NodeListOf<HTMLDivElement>) => {
     row.className = "index-row scroll-elem";
 
     row.innerHTML = /*html*/ `
-      <div class="flex gap-2 font-mono sm:col-span-3">
+      <div class="flex gap-2 font-mono sm:col-span-2">
         <span class="text-[0.625rem] text-(--highlight-color) md:leading-5" aria-hidden="true">${rowNo}</span>
         <span class="text-xs md:text-sm">${period}</span>
       </div>
-      <div class="flex flex-col sm:col-span-4">
+      <div class="flex flex-col sm:col-span-3">
         <span class="text-xl font-bold">${name}</span>
         <span class="font-mono text-sm">${role}</span>
       </div>
-      <div class="text-sm text-(--lighter-text) sm:col-span-5 md:text-base">${note}</div>
+      <div class="text-sm text-(--lighter-text) sm:col-span-3 md:text-base">${note}</div>
     `;
   });
 };

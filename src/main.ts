@@ -51,21 +51,18 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
        <!-- Intro -->
-      <div class="scroll-fade-up relative z-10 flex flex-col w-full pt-4 pb-5 sm:flex-row">
-        <div class="w-full px-4 border-default sm:px-6 sm:max-w-(--intro-container-width-sm) sm:border-r xl:max-w-(--intro-container-width)">
-            <span class="scroll-elem section-no mb-3">
+      <div class="scroll-fade-up relative z-10 flex flex-col w-full sm:flex-row">
+        <div class="w-full px-4 pt-4 border-default sm:px-6 sm:pb-4 sm:max-w-(--intro-container-width-sm) sm:border-r xl:max-w-(--intro-container-width)">
+            <span class="scroll-elem section-no">
               001—About.
             </span>
         </div>
-        <div class="flex flex-col w-full max-w-lg gap-4 px-4 sm:px-6 xl:max-w-xl">
+        <div class="flex flex-col w-full max-w-lg gap-4 px-4 pb-4 sm:px-6 sm: pt-4 xl:max-w-xl">
           <p class="scroll-lines font-mono font-semibold text-lg xl:text-xl" role="group">
-            Hi, I’m Wanlin. I’m a UI designer and frontend engineer with over 8 years of experience — I design the interface, then I build it.
+            Hi, I’m Wanlin. I’m a UI designer and frontend engineer — I design the interface, then I build it.
           </p>
           <p class="scroll-elem text-(--lighter-text) xl:text-lg">
             My strength is the middle: turning a direction into a pixel-exact interface, then a component library, then production code. Type, spacing and motion on one side; semantics, performance and accessibility on the other. Because I own both, what ships looks like what was designed.
-          </p>
-          <p class="scroll-elem text-(--lighter-text) xl:text-lg">
-            Most of that work has been in high-compliance environments — Singapore government services, healthcare and enterprise platforms — where WCAG 2.1 AA and Digital Service Standards are the starting line, not the polish.
           </p>
         </div>
       </div>
@@ -106,9 +103,6 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
               <h2 class="scroll-chars font-display tracking-[-0.03em] text-6xl sm:text-8xl xl:text-9xl">
                 Work
               </h2>
-              <p class="scroll-elem max-w-xs font-mono text-xs -mt-2 text-(--lighter-text) md:text-sm md:max-w-sm md:-mt-4 md:mb-2">
-                Three projects across the range — interface design at scale, production frontend engineering, and both at once.
-              </p>
             </div>
           </div>
           <div class="checkered-row"></div>
@@ -187,13 +181,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
       <!-- Section header -->
-      <div class="scroll-fade-up relative z-10 flex flex-col w-full py-4 sm:flex-row">
-        <div class="w-full px-4 border-default sm:px-6 sm:max-w-(--intro-container-width-sm) sm:border-r xl:max-w-(--intro-container-width)">
+      <div class="scroll-fade-up relative z-10 grid flex-col w-full sm:grid-cols-4">
+        <div class="w-full px-4 pt-4 border-default col-span-4 sm:pb-4 sm:px-6 sm:col-span-1 sm:border-r">
           <span class="scroll-elem section-no">
             003—Capabilities.
           </span>
         </div>
-        <div class="flex flex-col w-full max-w-lg gap-2 px-4 sm:px-6 xl:max-w-xl">
+        <div class="flex flex-col w-full max-w-lg gap-2 px-4 pt-1 pb-4 col-span-4 sm:pt-4 sm:px-6 sm:col-span-3 xl:max-w-xl">
           <div class="overflow-hidden">
             <h2 class="scroll-chars font-display tracking-[-0.03em] text-5xl sm:text-6xl xl:text-7xl">
               What I do
@@ -281,13 +275,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
       <!-- Section header -->
-      <div class="scroll-fade-up relative z-10 flex flex-col w-full py-4 sm:flex-row">
-        <div class="w-full px-4 border-default sm:px-6 sm:max-w-(--intro-container-width-sm) sm:border-r xl:max-w-(--intro-container-width)">
+      <div class="scroll-fade-up relative z-10 grid flex-col w-full sm:grid-cols-4">
+        <div class="w-full px-4 pt-4 border-default col-span-4 sm:pb-4 sm:px-6 sm:col-span-1 sm:border-r">
           <span class="scroll-elem section-no">
             004—Experience.
           </span>
         </div>
-        <div class="flex flex-col w-full max-w-lg gap-2 px-4 sm:px-6 xl:max-w-xl">
+        <div class="flex flex-col w-full max-w-lg gap-2 px-4 pt-1 pb-4 col-span-4 sm:pt-4 sm:px-6 sm:col-span-3 xl:max-w-xl">
           <div class="overflow-hidden">
             <h2 class="scroll-chars font-display tracking-[-0.03em] text-5xl sm:text-6xl xl:text-7xl">
               Track record
@@ -310,7 +304,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           data-period="2018—2025"
           data-name="NCS"
           data-role="UI/UX Designer & Frontend Engineer"
-          data-note="Design systems and production frontend for government and enterprise platforms — MOH, NYP, LTA, IRAS, MOE, STB, MCCY, ICA">
+          data-note="Design systems and production frontend for government and enterprise platforms">
         </div>
         <div
           class="experience-row"

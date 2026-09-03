@@ -84,7 +84,7 @@
     @apply inline-flex items-center border border-dashed border-(--border-color) px-2 py-1 font-mono text-xs leading-none whitespace-nowrap transition-colors duration-200 hover:border-solid hover:border-(--highlight-color) hover:text-(--highlight-color);
   }
   .index-row {
-    @apply relative z-10 grid w-full grid-cols-1 items-stretch gap-2 gap-x-4 gap-y-2 border-t border-dashed border-(--border-color) py-3.5 transition-colors duration-200 first:border-t-0 hover:bg-black/3 sm:grid-cols-12 sm:gap-y-1;
+    @apply relative z-10 grid w-full grid-cols-1 items-stretch gap-2 gap-x-4 gap-y-2 border-t border-dashed border-(--border-color) py-3.5 transition-colors duration-200 first:border-t-0 hover:bg-black/3 sm:grid-cols-8 sm:gap-y-1;
   }
   .index-row > * {
     @apply border-dashed border-(--border-color) px-4 sm:border-l sm:px-6 first:sm:border-0;
