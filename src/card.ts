@@ -93,6 +93,7 @@ export const homeCard = (cards: NodeListOf<HTMLDivElement>) => {
         const thumbnailImage = document.createElement("img");
         thumbnailImage.setAttribute("src", thumbnail);
         thumbnailImage.setAttribute("alt", altText ? altText : "");
+        thumbnailImage.setAttribute("loading", "lazy");
         thumbnailImage.classList =
           "object-cover object-top w-full h-full group-hover:scale-[110%] transition-transform duration-300 ease-out";
 
