@@ -11,6 +11,9 @@ const navigationBar = (element: HTMLElement) => {
         <!-- Work -->
         <a href="index.html#work" class="nav-link">Work</a>
 
+        <!-- Contact -->
+        <a href="index.html#contact" class="nav-link max-sm:hidden">Contact</a>
+
         <!-- Resume -->
         <a href="https://thebqcwwxioszdmfhrbh.supabase.co/storage/v1/object/public/portfolio-assets/resume-wanlin-cheung.pdf" class="nav-link">Resume</a>
 

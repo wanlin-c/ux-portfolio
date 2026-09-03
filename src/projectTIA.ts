@@ -43,7 +43,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       <div class="flex flex-col w-full border dashed-guides-v dashed-guides-h">
 
         <!-- dot divider -->
-        <div class="h-6.5 bg-dot border-b border-dashed border-black/30" aria-hidden="true">
+        <div class="h-6.5 bg-dot border-b border-default" aria-hidden="true">
         </div>
 
           <img
@@ -71,7 +71,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </div>
 
           <!-- dot divider -->
-          <div class="h-6.5 bg-dot border-y border-dashed border-black/30" aria-hidden="true">
+          <div class="h-6.5 bg-dot border-y border-default" aria-hidden="true">
           </div>
 
           <img
@@ -103,7 +103,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </div>
 
           <!-- dot divider -->
-          <div class="h-6.5 bg-dot border-y border-dashed border-black/30" aria-hidden="true">
+          <div class="h-6.5 bg-dot border-y border-default" aria-hidden="true">
           </div>
 
           <img
@@ -138,7 +138,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </div>
 
           <!-- dot divider -->
-          <div class="h-6.5 bg-dot border-y border-dashed border-black/30" aria-hidden="true">
+          <div class="h-6.5 bg-dot border-y border-default" aria-hidden="true">
           </div>
 
           <img
@@ -169,7 +169,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </div>
 
           <!-- dot divider -->
-          <div class="h-6.5 bg-dot border-y border-dashed border-black/30" aria-hidden="true">
+          <div class="h-6.5 bg-dot border-y border-default" aria-hidden="true">
           </div>
 
           <img
@@ -196,7 +196,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </div>
 
           <!-- dot divider -->
-          <div class="h-6.5 bg-dot border-t border-dashed border-black/30" aria-hidden="true">
+          <div class="h-6.5 bg-dot border-t border-default" aria-hidden="true">
           </div>
 
         </div>

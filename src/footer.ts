@@ -3,7 +3,7 @@ const footer = (footer: HTMLElement) => {
   footer.innerHTML = /*html*/ `
       <div class="divider-striped"></div>
       <div class="flex items-center justify-center w-full pb-2 text-sm border-t">
-        <span>©2026</span>
+        <span class="font-mono">©2026 — Wanlin Cheung</span>
 
         <!--Social media -->
         <div class="flex items-center justify-end grow gap-2.5">
@@ -19,7 +19,6 @@ const footer = (footer: HTMLElement) => {
         </div>
 
       </div>
-    </div>
   `;
 };
 

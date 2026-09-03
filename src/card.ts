@@ -8,6 +8,12 @@ export const homeCard = (cards: NodeListOf<HTMLDivElement>) => {
     const liveSite = card.getAttribute("data-live-site");
     const caseStudy = card.getAttribute("data-case-study");
     const thumbnail = card.getAttribute("data-thumbnail");
+    const altText = card.getAttribute("data-alt");
+    const year = card.getAttribute("data-year");
+    const tags = (card.getAttribute("data-tags") ?? "")
+      .split("|")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
 
     // Card CSS classes
     card.classList =
@@ -18,9 +24,19 @@ export const homeCard = (cards: NodeListOf<HTMLDivElement>) => {
       <div class="scroll-fade-up flex flex-col w-full gap-1 justify-center p-4 md:p-6 xl:p-8 relative z-10">
         <h3 class="scroll-words text-xl font-bold leading-[1.2] sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl">${title}</h3>
         <p class="scroll-words font-mono text-sm md:text-base lg:text-sm xl:text-base">${role}</p>
-        <p class="scroll-elem text-gray-500 mt-2.5 text-sm md:text-base lg:text-sm xl:text-base">${description}</p>
+        <p class="scroll-elem text-(--lighter-text) mt-2.5 text-sm md:text-base lg:text-sm xl:text-base">${description}</p>
+        ${
+          tags.length
+            ? /*html*/ `
+              <ul class="scroll-elem mt-3.5 flex flex-wrap gap-1.5">
+                ${tags.map((tag) => `<li class="tag">${tag}</li>`).join("")}
+              </ul>`
+            : ""
+        }
       </div>
-      <span class="absolute z-20 flex justify-center items-center -top-px right-0 px-1 bg-black font-mono text-[0.625rem] text-white">${cardNo}</span>
+      <span class="absolute z-20 flex items-center gap-1.5 -top-px right-0 px-1 bg-black font-mono text-[0.625rem] text-white">
+        ${year ? `<span>${year}</span>` : ""}${cardNo}
+      </span>
     `;
 
     // Links container
@@ -71,12 +87,12 @@ export const homeCard = (cards: NodeListOf<HTMLDivElement>) => {
         const thumbnailContainer = document.createElement("a");
         caseStudy && thumbnailContainer.setAttribute("href", caseStudy);
         thumbnailContainer.classList =
-          "group relative z-10 shrink-0 w-full border-dashed border-black/30 overflow-hidden max-sm:border-b max-sm:aspect-video sm:border-l sm:w-70 md:w-100 lg:w-70";
+          "group relative z-10 shrink-0 w-full border-default overflow-hidden max-sm:border-b max-sm:aspect-video sm:border-l sm:w-70 md:w-100 lg:w-70";
 
         // Create thumbnail image
         const thumbnailImage = document.createElement("img");
         thumbnailImage.setAttribute("src", thumbnail);
-        thumbnailImage.setAttribute("alt", "");
+        thumbnailImage.setAttribute("alt", altText ? altText : "");
         thumbnailImage.classList =
           "object-cover object-top w-full h-full group-hover:scale-[110%] transition-transform duration-300 ease-out";
 

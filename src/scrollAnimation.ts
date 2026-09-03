@@ -6,6 +6,10 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const scrollAnimation = () => {
+  // Entrance animations are purely decorative — leave the content in its
+  // resting state when the visitor has asked the OS for reduced motion.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
   const scrollLines = gsap.utils.toArray(".scroll-lines");
 
   scrollLines.forEach((element: any) => {

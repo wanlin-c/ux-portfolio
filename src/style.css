@@ -14,6 +14,8 @@
   --nav-height-top: 2.6875rem;
 
   --highlight-color: #fd5006;
+  --lighter-text: var(--color-gray-500);
+  --border-color: rgba(0, 0, 0, 0.3);
 
   --dashed-underline-width: 10px;
   --dashed-underline-width-n: -10px;
@@ -35,6 +37,13 @@
     }
     100% {
       background-position: var(--dashed-underline-width) 100%;
+    }
+  }
+  @keyframes status-ping {
+    75%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
     }
   }
 }
@@ -62,7 +71,7 @@
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(70.5% 0.213 47.604)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>');
   }
   .paragraph-container {
-    @apply flex w-full flex-col gap-4 overflow-hidden border-t border-dashed border-black/30 p-4 md:p-6 xl:p-8;
+    @apply flex w-full flex-col gap-4 overflow-hidden border-t border-dashed border-(--border-color) p-4 md:p-6 xl:p-8;
   }
   .paragraph-title {
     @apply max-w-xl text-2xl font-bold md:text-3xl;
@@ -71,11 +80,30 @@
     @apply max-w-xl text-base md:text-lg;
   }
   .section-no {
-    @apply flex items-start font-mono text-sm before:relative before:top-1.5 before:mr-1.5 before:inline-block before:h-2 before:w-2 before:bg-(--highlight-color) xl:text-base before:xl:top-1.75 xl:before:mr-2 xl:before:h-2.5 xl:before:w-2.5;
+    @apply flex h-7 items-start font-mono text-sm before:relative before:top-1.5 before:mr-1.5 before:inline-block before:h-2 before:w-2 before:bg-(--highlight-color) xl:text-base before:xl:top-1.75 xl:before:mr-2 xl:before:h-2.5 xl:before:w-2.5;
+  }
+  .tag {
+    @apply inline-flex items-center border border-dashed border-(--border-color) px-2 py-1 font-mono text-xs leading-none whitespace-nowrap transition-colors duration-200 hover:border-solid hover:border-(--highlight-color) hover:text-(--highlight-color);
+  }
+  .index-row {
+    @apply relative z-10 grid w-full grid-cols-1 items-stretch gap-2 gap-x-4 gap-y-2 border-t border-dashed border-(--border-color) py-3.5 transition-colors duration-200 first:border-t-0 hover:bg-black/3 sm:grid-cols-12 sm:gap-y-1;
+  }
+  .index-row > * {
+    @apply border-dashed border-(--border-color) px-4 sm:border-l first:sm:border-0 md:px-6 xl:px-8;
+  }
+  .status-dot {
+    @apply relative inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-(--highlight-color);
+  }
+  .status-dot::after {
+    @apply absolute inset-0 rounded-full bg-(--highlight-color) content-[''];
+    animation: status-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 }
 
 @layer utilities {
+  .border-default {
+    @apply border-dashed border-(--border-color);
+  }
   .bg-striped {
     --stripe-color: rgba(0, 0, 0, 0.5);
 
@@ -125,10 +153,10 @@
     @apply relative after:absolute after:h-full after:w-full after:bg-[rgba(0,0,0,0.03)];
   }
   .dashed-guides-v {
-    @apply relative before:absolute before:-top-3 before:-left-px before:z-0 before:h-[calc(100%+1.5rem)] before:w-[calc(100%+2px)] before:border-x before:border-dashed before:border-black/30 lg:before:-top-6 lg:before:h-[calc(100%+3rem)];
+    @apply relative before:absolute before:-top-3 before:-left-px before:z-0 before:h-[calc(100%+1.5rem)] before:w-[calc(100%+2px)] before:border-x before:border-dashed before:border-(--border-color) lg:before:-top-6 lg:before:h-[calc(100%+3rem)];
   }
   .dashed-guides-h {
-    @apply relative after:absolute after:-top-px after:-left-3 after:z-0 after:h-[calc(100%+2px)] after:w-[calc(100%+1.5rem)] after:border-y after:border-dashed after:border-black/30 lg:after:-left-6 lg:after:w-[calc(100%+3rem)];
+    @apply relative after:absolute after:-top-px after:-left-3 after:z-0 after:h-[calc(100%+2px)] after:w-[calc(100%+1.5rem)] after:border-y after:border-dashed after:border-(--border-color) lg:after:-left-6 lg:after:w-[calc(100%+3rem)];
   }
   .decoration-highlight {
     @apply relative z-0;
@@ -147,5 +175,30 @@
   }
   .bg-highlight {
     @apply bg-(--highlight-color);
+  }
+  .marquee {
+    @apply flex w-full overflow-hidden;
+  }
+  .marquee-track {
+    @apply flex shrink-0 items-center;
+    animation: checkered-row-marquee var(--marquee-duration, 40s) linear
+      infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Motion is decorative throughout — honour the user's system preference.
+   GSAP entrances are disabled separately in scrollAnimation.ts. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
