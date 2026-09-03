@@ -62,23 +62,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
             Hi, I’m Wanlin. I’m a UI designer and frontend engineer with over 8 years of experience — I design the interface, then I build it.
           </p>
           <p class="scroll-elem text-(--lighter-text) xl:text-lg">
-            My strength is the middle: turning a direction into a pixel-exact interface, then a component library, then production code. Type, spacing, states and motion on one side; semantics, performance and accessibility on the other. Because I own both, what ships looks like what was designed.
+            My strength is the middle: turning a direction into a pixel-exact interface, then a component library, then production code. Type, spacing and motion on one side; semantics, performance and accessibility on the other. Because I own both, what ships looks like what was designed.
           </p>
           <p class="scroll-elem text-(--lighter-text) xl:text-lg">
             Most of that work has been in high-compliance environments — Singapore government services, healthcare and enterprise platforms — where WCAG 2.1 AA and Digital Service Standards are the starting line, not the polish.
           </p>
-          <p class="scroll-elem border-t border-default pt-4 font-mono text-sm text-(--lighter-text)">
-            How I work best: alongside a researcher, BA or PM who sets the direction — then I take it from the first screen to the shipped build. Discovery is the half I share; interface and implementation are the half I own.
-          </p>
         </div>
-      </div>
-
-      <!-- Stats band -->
-      <div class="scroll-fade-up relative z-10 grid w-full grid-cols-2 border-t border-default lg:grid-cols-4">
-        <div class="stat-block" data-figure="8+" data-label="Years across design & frontend"></div>
-        <div class="stat-block" data-figure="10+" data-label="Public-sector platforms shipped"></div>
-        <div class="stat-block" data-figure="90+" data-label="Lighthouse a11y, SEO & best practices"></div>
-        <div class="stat-block" data-figure="AA" data-label="WCAG 2.1 conformance, by default"></div>
       </div>
 
       <!-- dot divider -->
@@ -86,7 +75,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
       <!-- Organisations ticker -->
-      <div class="relative z-10 flex flex-col w-full py-1.5">
+      <div class="relative z-10 flex flex-col w-full pt-1.5 pb-2">
         <span class="px-4 pt-3 font-mono text-xs text-(--lighter-text) md:text-sm lg:px-6">
           Design &amp; frontend work shipped for:
         </span>
@@ -216,6 +205,14 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
         </div>
       </div>
 
+      <!-- Stats band -->
+      <div class="scroll-fade-up relative z-10 grid w-full grid-cols-2 border-t border-default lg:grid-cols-4">
+        <div class="stat-block" data-figure="8+" data-label="Years across design & frontend"></div>
+        <div class="stat-block" data-figure="10+" data-label="Public-sector platforms shipped"></div>
+        <div class="stat-block" data-figure="90+" data-label="Lighthouse a11y, SEO & best practices"></div>
+        <div class="stat-block" data-figure="AA" data-label="WCAG 2.1 conformance, by default"></div>
+      </div>
+
       <!-- grid divider -->
       <div class="h-12 bg-grid border-b border-default" aria-hidden="true">
       </div>
@@ -243,11 +240,11 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
       </div>
 
       <!-- dot divider -->
-      <div class="h-6.5 bg-dot border-y border-default" aria-hidden="true">
+      <div class="h-6.5 bg-dot border-t border-default lg:hidden" aria-hidden="true">
       </div>
 
       <!-- Tools -->
-      <div class="scroll-fade-up relative z-10 flex flex-col gap-3 px-4 pt-4 pb-5 md:px-6 xl:px-8">
+      <div class="scroll-fade-up relative z-10 flex flex-col gap-3 px-4 pt-4 pb-5 border-default md:px-6 lg:border-t xl:px-8">
         <span class="scroll-elem font-mono text-xs text-(--lighter-text) md:text-sm">
           Tools &amp; environments:
         </span>
@@ -326,7 +323,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
 
       <!-- Credentials -->
       <div class="scroll-fade-up relative z-10 flex flex-col w-full border-t border-default">
-        <span class="scroll-elem bg-black/3 px-4 py-1.5 font-mono text-sm md:px-6 md:text-base xl:px-8">
+        <span class="scroll-elem bg-black/3 px-4 py-1.5 font-mono text-xs md:px-6 md:text-sm xl:px-8">
           Credentials:
         </span>
         <div
