@@ -10,7 +10,7 @@ export const capabilityColumn = (columns: NodeListOf<HTMLDivElement>) => {
       .filter(Boolean);
 
     column.className =
-      "scroll-fade-up relative z-10 flex w-full flex-col gap-2 border-default p-4 max-lg:border-b max-lg:last:border-b-0 md:p-6 lg:border-r lg:last:border-r-0 xl:p-8";
+      "scroll-fade-up relative z-10 flex w-full flex-col gap-2 border-default p-4 max-lg:border-b max-lg:last:border-b-0 sm:p-6 lg:border-r lg:last:border-r-0";
 
     column.innerHTML = /*html*/ `
       <span class="scroll-elem font-mono text-[0.625rem] text-(--highlight-color) -mb-1" aria-hidden="true">${columnNo}</span>

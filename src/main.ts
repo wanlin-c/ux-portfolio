@@ -28,7 +28,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           <span class="status-dot" aria-hidden="true"></span>
           Open to new roles
         </span>
-        <span class="text-(--lighter-text)">UI Designer &amp; Frontend Engineer</span>
+        <span class="text-(--lighter-text)">/ UI Designer &amp; Frontend Engineer</span>
         <span class="flex items-center gap-2 text-(--lighter-text) sm:ml-auto">
           Singapore
           <span aria-hidden="true">/</span>
@@ -76,13 +76,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
 
       <!-- Organisations ticker -->
       <div class="relative z-10 flex flex-col w-full pt-1.5 pb-2">
-        <span class="px-4 pt-3 font-mono text-xs text-(--lighter-text) md:text-sm lg:px-6">
+        <span class="px-4 pt-3 font-mono text-xs text-(--lighter-text) md:text-sm sm:px-6">
           Design &amp; frontend work shipped for:
         </span>
         <div
           class="text-marquee border-t border-default"
           data-duration="45s"
-          data-items="MOH | NYP | Tech in Asia | LTA | IRAS | MOE | Singtel | RCBC | STB | MCCY | ICA | SPH Zaobao">
+          data-items="MOH | NYP | Tech in Asia | LTA | IRAS | MOE | Singtel | RCBC | STB | MCCY | ICA | SPH Zaobao Schools">
         </div>
       </div>
 
@@ -239,12 +239,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
         </div>
       </div>
 
-      <!-- dot divider -->
-      <div class="h-6.5 bg-dot border-t border-default lg:hidden" aria-hidden="true">
+      <!-- grid divider -->
+      <div class="h-12 bg-grid border-b border-default lg:hidden" aria-hidden="true">
       </div>
 
       <!-- Tools -->
-      <div class="scroll-fade-up relative z-10 flex flex-col gap-3 px-4 pt-4 pb-5 border-default md:px-6 lg:border-t xl:px-8">
+      <div class="scroll-fade-up relative z-10 flex flex-col gap-3 px-4 pt-4 pb-5 border-default sm:px-6 lg:border-t">
         <span class="scroll-elem font-mono text-xs text-(--lighter-text) md:text-sm">
           Tools &amp; environments:
         </span>
@@ -323,7 +323,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
 
       <!-- Credentials -->
       <div class="scroll-fade-up relative z-10 flex flex-col w-full border-t border-default">
-        <span class="scroll-elem bg-black/3 px-4 py-1.5 font-mono text-xs md:px-6 md:text-sm xl:px-8">
+        <span class="scroll-elem bg-black/3 px-4 py-1.5 font-mono font-semibold text-xs sm:px-6 md:text-sm">
           Credentials:
         </span>
         <div
@@ -378,7 +378,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
           </h2>
         </div>
 
-        <div class="scroll-elem flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-(--lighter-text) mt-3 md:text-sm">
+        <div class="scroll-elem flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-(--lighter-text) mt-4 md:text-sm">
           <span class="flex items-center gap-2 text-black">
             <span class="status-dot" aria-hidden="true"></span>
             Open to Design Engineer &amp; Product Design roles

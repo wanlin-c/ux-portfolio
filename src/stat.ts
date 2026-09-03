@@ -5,7 +5,7 @@ export const statBlock = (stats: NodeListOf<HTMLDivElement>) => {
     const label = stat.getAttribute("data-label");
 
     stat.className =
-      "scroll-elem flex flex-col justify-start gap-1.5 border-b border-r border-default p-4 last:border-r-0 md:px-6 md:py-5 lg:border-b-0 max-lg:nth-[2n]:border-r-0 max-lg:nth-last-[-n+2]:border-b-0";
+      "scroll-elem flex flex-col justify-start gap-1.5 border-b border-r border-default p-4 last:border-r-0 sm:px-6 md:py-5 lg:border-b-0 max-lg:nth-[2n]:border-r-0 max-lg:nth-last-[-n+2]:border-b-0";
 
     stat.innerHTML = /*html*/ `
       <span class="font-display tracking-[-0.03em] text-4xl leading-none xl:text-5xl">${figure}</span>

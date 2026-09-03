@@ -87,7 +87,7 @@
     @apply relative z-10 grid w-full grid-cols-1 items-stretch gap-2 gap-x-4 gap-y-2 border-t border-dashed border-(--border-color) py-3.5 transition-colors duration-200 first:border-t-0 hover:bg-black/3 sm:grid-cols-12 sm:gap-y-1;
   }
   .index-row > * {
-    @apply border-dashed border-(--border-color) px-4 sm:border-l first:sm:border-0 md:px-6 xl:px-8;
+    @apply border-dashed border-(--border-color) px-4 sm:border-l sm:px-6 first:sm:border-0;
   }
   .status-dot {
     @apply relative inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-(--highlight-color);
